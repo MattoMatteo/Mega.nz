@@ -20,17 +20,17 @@ with open('README.md', 'r', encoding='utf-8') as rm_file:
 with open('HISTORY.md', 'r', encoding='utf-8') as hist_file:
     history = hist_file.read()
 
-setup(name='mega.py',
+setup(name='mega.nz',
       version='1.1.0',
       packages=find_packages('src', exclude=('tests', )),
       package_dir={'': 'src'},
       include_package_data=True,
       zip_safe=False,
       url='https://github.com/odwyersoftware/mega.py',
-      description='Python lib for the Mega.co.nz API',
+      description='fork of mega.py library',
       long_description=readme + '\n\n' + history,
       long_description_content_type='text/markdown',
-      author='O\'Dwyer Software',
+      author='O\'Dwyer Software and fork of Matteo Calautti',
       author_email='hello@odwyer.software',
       license='Creative Commons Attribution-Noncommercial-Share Alike license',
       install_requires=install_requires,
