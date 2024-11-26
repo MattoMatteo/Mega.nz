@@ -6,7 +6,7 @@ Learn how to use it: https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md
 
 
 ----
-Fork for more compatility with python versione >3.5
+Fork for more compatility with python version>3.5
 =======
 
 Mega.py
