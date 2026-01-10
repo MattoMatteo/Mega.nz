@@ -351,7 +351,6 @@ class Mega:
         print(f"self._api_request({{'a': 'f', 'c': 1, 'r': 1}}): files: {files}")
         files_dict = {}
         shared_keys = {}
-        print(f"prima di init self.shared_keys: {self.shared_keys}")
         self._init_shared_keys(files, shared_keys)
         print(f"dopo di init self.shared_keys: {self.shared_keys}")
         print(f"shared_keys (popolato dopo init?): {shared_keys}")
