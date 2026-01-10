@@ -758,7 +758,7 @@ class Mega:
             if folder := self.find(dest):
                 dest = folder[0]
             else:
-                dest = None
+                dest = dest
 
         if isinstance(file, str):
             with open(file, 'rb') as f:
