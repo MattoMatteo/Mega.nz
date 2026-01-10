@@ -296,7 +296,6 @@ class Mega:
             Descriptor (str) of folder3 if exists, None otherwise
         """
         paths = path.split('/')
-
         files = files or self.get_files()
         parent_desc = self.root_id
         found = False
@@ -349,7 +348,7 @@ class Mega:
     def get_files(self):
         logger.info('Getting all files...')
         files = self._api_request({'a': 'f', 'c': 1, 'r': 1})
-        print(f"self._api_request({'a': 'f', 'c': 1, 'r': 1}): files: {files}")
+        print(f"self._api_request({{'a': 'f', 'c': 1, 'r': 1}}): files: {files}")
         files_dict = {}
         shared_keys = {}
         print(f"prima di init self.shared_keys: {self.shared_keys}")
