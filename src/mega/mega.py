@@ -278,7 +278,7 @@ class Mega:
         ok_dict = {}
         for ok_item in files['ok']:
             shared_key = decrypt_key(base64_to_a32(ok_item['k']),
-                                     self.master_key)
+                                    self.master_key)
             ok_dict[ok_item['h']] = shared_key
         for s_item in files['s']:
             if s_item['u'] not in shared_keys:
@@ -348,19 +348,14 @@ class Mega:
     def get_files(self):
         logger.info('Getting all files...')
         files = self._api_request({'a': 'f', 'c': 1, 'r': 1})
-        print(f"self._api_request({{'a': 'f', 'c': 1, 'r': 1}}): files: {files}")
         files_dict = {}
         shared_keys = {}
         self._init_shared_keys(files, shared_keys)
-        print(f"dopo di init self.shared_keys: {self.shared_keys}")
-        print(f"shared_keys (popolato dopo init?): {shared_keys}")
         for file in files['f']:
             processed_file = self._process_file(file, shared_keys)
-            print(f"processed_file: {processed_file}")
             # ensure each file has a name before returning
             if processed_file['a']:
                 files_dict[file['h']] = processed_file
-        print(f"DEBUG_CACHE: self.nodes ora contiene {len(files_dict)} oggetti decriptati")
         return files_dict
 
     def get_upload_link(self, file):
